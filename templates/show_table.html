@@ -1,0 +1,10 @@
+{% for p in  res %}
+
+<a href="{{ p.id }}">
+    {{ p.id }}
+    {{ p.full_name }}
+    {{ p.age }}
+    {{ p.birthplace }}
+    {{ p.team.name }}</a>
+<hr>
+{% endfor %}
