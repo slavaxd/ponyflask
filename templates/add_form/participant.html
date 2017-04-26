@@ -1,0 +1,27 @@
+<form action="" method="get" id="part">
+    Ім'я:
+    <input type="text" name="name" value="" placeholder="">
+    <br>
+    Вік:
+    <input type="text" name="age" value="" placeholder="">
+    <br>
+    День народження:
+    <input type="text" name="birthday" value="" placeholder="">
+    <br>
+    Місце народження:
+    <input type="text" name="birthplace" value="" placeholder="">
+    <br>
+    <select name="team" form="part">
+       {% for team in teams %}
+          <option value="{{ team.id }}">{{ team.name }}</option>
+       {% endfor %}
+    </select>
+
+    <select name="bike" form="part">
+       {% for b in bikes %}
+          <option value="{{ b.id }}">{{ b.color }} {{ b.material }} ({{ b.price }})</option>
+       {% endfor %}
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
