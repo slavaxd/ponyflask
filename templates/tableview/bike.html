@@ -69,21 +69,24 @@
     <div class="flex-container"></div>
     <table>
         <tr>
-            <th>П.І.Б.</th>
-            <th>Вік</th>
-            <th>Дата народження</th>
-            <th>Місце народження</th>
-            <th>Назва команди</th>
-            <th>Тип велосипеду</th>
+            <th>Вид</th>
+            <th>Виробник</th>
+            <th>Вага</th>
+            <th>Матеріал</th>
+            <th>Колір</th>
+            <th>Країна виробника</th>
+            <th>Ціна</th>
+
         </tr>
         {% for obj in res %}
         <tr>
-            <td>{{ obj.name }}</td>
-            <td>{{ obj.age }}</td>
-            <td>{{ obj.birthday }}</td>
-            <td>{{ obj.birthplace }}</td>
-            <td>{{ obj.team.name }}</td>
-            <td>{{ obj.bike.kind_of_bike }}</td>
+            <td>{{ obj.kind_of_bike}}</td>
+            <td>{{ obj.made_by }}</td>
+            <td>{{ obj.material }}</td>
+            <td>{{ obj.weight }}</td>
+            <td>{{ obj.color }}</td>
+            <td>{{ obj.country }}</td>
+            <td>{{ obj.price }}</td>
         </tr>
         {% endfor %}
 

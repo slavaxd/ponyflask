@@ -73,8 +73,7 @@
             <th>Вік</th>
             <th>Дата народження</th>
             <th>Місце народження</th>
-            <th>Назва команди</th>
-            <th>Тип велосипеду</th>
+            <th>Команда</th>
         </tr>
         {% for obj in res %}
         <tr>
@@ -82,8 +81,7 @@
             <td>{{ obj.age }}</td>
             <td>{{ obj.birthday }}</td>
             <td>{{ obj.birthplace }}</td>
-            <td>{{ obj.team.name }}</td>
-            <td>{{ obj.bike.kind_of_bike }}</td>
+            <td>{{ obj.team }}</td>
         </tr>
         {% endfor %}
 

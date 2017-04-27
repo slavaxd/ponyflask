@@ -69,21 +69,18 @@
     <div class="flex-container"></div>
     <table>
         <tr>
-            <th>П.І.Б.</th>
-            <th>Вік</th>
-            <th>Дата народження</th>
-            <th>Місце народження</th>
-            <th>Назва команди</th>
-            <th>Тип велосипеду</th>
+            <th>Назва</th>
+            <th>Дата створення організації</th>
+            <th>Назва змагання</th>
+            <th>Організатор</th>
+            <th>Кількість учасників</th>
         </tr>
         {% for obj in res %}
         <tr>
             <td>{{ obj.name }}</td>
-            <td>{{ obj.age }}</td>
             <td>{{ obj.birthday }}</td>
-            <td>{{ obj.birthplace }}</td>
-            <td>{{ obj.team.name }}</td>
-            <td>{{ obj.bike.kind_of_bike }}</td>
+            <td>{{ obj. }}</td>
+
         </tr>
         {% endfor %}
 
