@@ -25,6 +25,7 @@ def query(id, p1, p2):
     if id == 2:
         res = select(t for t in Team if t.name.startswith(p1)
                     for t in Team if count(t.participants) == int(p2))[:]
+        return render_template('queryres/2.html', res=res)
     if id == 3:
         return select(p for p in Participant if p.age > 0)
     if id == 4:

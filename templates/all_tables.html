@@ -1,14 +1,124 @@
-<a href="/edit/participant/">Учасник змагань</a><br>
+<!DOCTYPE html>
+<html lang="en">
 
-<a href="/edit/team/">Команда</a><br>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            height: 500px;
+            margin: 0;
+            background-repeat: no-repeat;
+        }
 
-<a href="/edit/bike/">Велосипед</a><br>
+        a {
+            text-decoration: none;
+            color: black
+        }
 
-<a href="/edit/coach/">Тренер</a><br>
+        #top {
+            width: 100%;
+            height: 40%;
+            background-image: url(../static/img/back.jpg);
+            background-position: 50% 25%;
+        }
 
-<a href="/edit/competition/">Змагання</a><br>
+        #flex-container {
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-start;
+            justify-content: space-around;
+            list-style-type: none;
+            padding:0
+        }
 
-<a href="/edit/organizator/">Організатор</a><br>
+        .flex-item {
+            width: 300px;
+            height: 25px;
+            border: 1px solid #00D35C;
+            margin: 10px;
 
+            background-color: #00D35C;
 
+        }
 
+        .top {
+            width: 25%;
+            height: 40px;
+            border: 1px solid black;
+        }
+
+        .button {
+            background-color: white;
+            color: #008CBA;
+            border: 2px solid #008CBA;
+            width: 100px;
+            height: 50px;
+            font-family: courier new;
+            font-weight: bolder;
+        }
+
+        .button:hover {
+            background-color: #008CBA;
+            color: white;
+            cursor: pointer;
+        }
+        .main_menu{
+            position: relative;
+            left:630px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top"></div>
+
+        <ul id="flex-container">
+            <li>
+                <a href="/edit/participant/">
+                    <div class="flex-item">
+                        <div align="center" >Учасник змагань</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/edit/team/">
+                    <div class="flex-item">
+                        <div align="center" >Команда</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/edit/bike/">
+                    <div class="flex-item">
+                        <div align="center" >Велосипед</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/edit/coach/">
+                    <div class="flex-item">
+                        <div align="center" >Тренер</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/edit/competition/">
+                    <div class="flex-item">
+                        <div align="center" >Змагання</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="/edit/organizator/">
+                    <div class="flex-item">
+                        <div align="center" >Організатор</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+<a class="main_menu" href=""><button class="button">Головна сторінка</button></a>
+</body>
+
+</html>

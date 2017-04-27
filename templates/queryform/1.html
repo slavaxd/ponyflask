@@ -23,7 +23,7 @@
             background-position: 50% right;
         }
 
-        #button {
+        .button {
             background-color: white;
             color: #008CBA;
             border: 2px solid #008CBA;
@@ -33,7 +33,7 @@
             font-weight: bolder;
         }
 
-        #button:hover {
+        .button:hover {
             background-color: #008CBA;
             color: white;
             cursor: pointer;
@@ -63,8 +63,11 @@
         <input type="text" name="p2" value="" placeholder="">
         <br>
         <br>
-        <input id="button" type="submit" value="Пошук">
+        <input style="position:relative;left:50px" class="button" type="submit" value="Пошук">
+
+        <a style="position:relative;left:-300px;top:-6px;" href=""><button class="button">Головна сторінка</button></a>
     </form>
+
 
 
 

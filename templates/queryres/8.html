@@ -69,24 +69,22 @@
     <div class="flex-container"></div>
     <table>
         <tr>
-            <th>Ім'я</th>
-            <th>Вік</th>
-            <th>Дата народження</th>
-            <th>Назва команди</th>
+            <th>Вага</th>
+            <th>Країна виробника</th>
+            <th>Ціна</th>
+            <th>Матеріал</th>
         </tr>
         {% for obj in res %}
         <tr>
-            <td>{{ obj.name }}</td>
-            <td>{{ obj.age }}</td>
-            <td>{{ obj.birthday }}</td>
-            <td>{{ obj.team.name }}</td>
+            <td>{{ obj.weight }}</td>
+            <td>{{ obj.country }}</td>
+            <td>{{ obj.price }}</td>
+            <td>{{ obj.material) }}</td>
         </tr>
         {% endfor %}
 
 
     </table>
-    <a href="../index.html"><button class="button">Змінити параметри запиту</button></a>
-    <button>Головна сторінка</button>
 </body>
 
 </html>
