@@ -21,8 +21,6 @@
             height: 40%;
             background-image: url(../static/img/zaputu.jpg);
             background-position: 50% right;
-
-
         }
 
         #button {
@@ -40,16 +38,28 @@
             color: white;
             cursor: pointer;
         }
-        form{
-            position:relative;
-            top:100px
+
+        form {
+            position: relative;
+            top: 100px
+        }
+
+        footer {
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+            position: fixed;
+            background-color: #4CAF50;
+            padding-left: 630px;
         }
     </style>
 </head>
 
 <body>
-    <div id="top" style="color:white"><p style="margin:0;padding-top:45px" align="center">Запит №2</p>
-    <div style="width:600px;position:relative;top:20px;left:375px" align="center">Вивести команди, які починаються з певної літери і мають певну кількість учасників.</div></div>
+    <div id="top" style="color:white">
+        <p style="margin:0;padding-top:45px" align="center">Запит №2</p>
+        <div style="width:600px;position:relative;top:20px;left:375px" align="center">Вивести команди, які починаються з певної літери і мають певну кількість учасників.</div>
+    </div>
 
     <form align="center" action="" method="get">
         Введіть першу літеру:
@@ -64,7 +74,12 @@
         <br>
         <input id="button" type="submit" value="Пошук">
     </form>
+    <footer>
+        <a  href="/">
+            <button class="button">Головна сторінка</button>
+        </a>
 
+    </footer>
 
 
 
