@@ -61,14 +61,14 @@ def show_table(table_name):
     d = {
         'participant': [Participant, 'participant.html'],
         'team': [Team, 'team.html'],
-        'bike': Bike,
-        'coach': Coach,
-        'competition': Competition,
-        'organizator': Organizator
+        'bike': [Bike, 'bike.html'],
+        'coach': [Coach, 'coach.html'],
+        'competition': [Competition, 'competition.html'],
+        'organizator': [Organizator, 'organizator.html']
     }
     table = d[table_name][0]
     res = table.select(lambda huy: True)
-    return render_template('tableview/'d[table_name][1] + , res=res)
+    return render_template('tableview/' + d[table_name][1] , res=res)
 
 
 
