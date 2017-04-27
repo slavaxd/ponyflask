@@ -59,16 +59,16 @@ def all_tables():
 @db_session
 def show_table(table_name):
     d = {
-        'participant': Participant,
-        'team': Team,
+        'participant': [Participant, 'participant.html'],
+        'team': [Team, 'team.html'],
         'bike': Bike,
         'coach': Coach,
         'competition': Competition,
         'organizator': Organizator
     }
-    table = d[table_name]
+    table = d[table_name][0]
     res = table.select(lambda huy: True)
-    return render_template('show_table.html', res=res)
+    return render_template('tableview/'d[table_name][1] + , res=res)
 
 
 
