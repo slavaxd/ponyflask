@@ -60,19 +60,13 @@
         Місце народження:
         <input type="text" name="birthplace" value="" placeholder="">
         <br>
-        Команда:
+        Назва команди:
         <select name="team" form="part">
             {% for team in teams %}
             <option value="{{ team.id }}">{{ team.name }}</option>
             {% endfor %}
         </select>
         <br>
-        Тип велосипеду:
-        <select name="bike" form="part">
-            {% for bike in bikes %}
-            <option value="{{ bike.id }}">{{ bike.kind_of_bike }}</option>
-            {% endfor %}
-        </select>
 
 
         <input type="submit" value="Submit">

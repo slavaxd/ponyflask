@@ -48,29 +48,26 @@
 
 <body>
     <form action="" method="get" id="part">
-        П.І.Б.:
+        Назва:
         <input type="text" name="name" value="" placeholder="">
         <br>
-        Вік:
-        <input type="text" name="age" value="" placeholder="">
+        Країна проведення:
+        <input type="text" name="country" value="" placeholder="">
         <br>
-        Дата народження:
-        <input type="text" name="birthday" value="" placeholder="">
+        Місто проведення:
+        <input type="text" name="city" value="" placeholder="">
         <br>
-        Місце народження:
-        <input type="text" name="birthplace" value="" placeholder="">
-        <br>
-        Команда:
+        Організатор:
         <select name="team" form="part">
-            {% for team in teams %}
-            <option value="{{ team.id }}">{{ team.name }}</option>
+            {% for organizator in organizators %}
+            <option value="{{ organizator.id }}">{{ organizator.name }}</option>
             {% endfor %}
         </select>
         <br>
-        Тип велосипеду:
-        <select name="bike" form="part">
-            {% for bike in bikes %}
-            <option value="{{ bike.id }}">{{ bike.kind_of_bike }}</option>
+        П.І.Б. хедлайнера:
+        <select name="participant" form="part">
+            {% for participant in participants %}
+            <option value="{{ participant.id }}">{{ participant.name }}</option>
             {% endfor %}
         </select>
 

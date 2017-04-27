@@ -48,32 +48,27 @@
 
 <body>
     <form action="" method="get" id="part">
-        П.І.Б.:
-        <input type="text" name="name" value="" placeholder="">
+        Вид:
+        <input type="text" name="kind_of_bike" value="" placeholder="">
         <br>
-        Вік:
-        <input type="text" name="age" value="" placeholder="">
+        Виробник:
+        <input type="text" name="made_by" value="" placeholder="">
         <br>
-        Дата народження:
-        <input type="text" name="birthday" value="" placeholder="">
+        Матеріал:
+        <input type="text" name="material" value="" placeholder="">
         <br>
-        Місце народження:
-        <input type="text" name="birthplace" value="" placeholder="">
+        Вага:
+        <input type="text" name="weight" value="" placeholder="">
         <br>
-        Команда:
-        <select name="team" form="part">
-            {% for team in teams %}
-            <option value="{{ team.id }}">{{ team.name }}</option>
-            {% endfor %}
-        </select>
+        Колір:
+        <input type="text" name="color" value="" placeholder="">
         <br>
-        Тип велосипеду:
-        <select name="bike" form="part">
-            {% for bike in bikes %}
-            <option value="{{ bike.id }}">{{ bike.kind_of_bike }}</option>
-            {% endfor %}
-        </select>
-
+        Країна виробника:
+        <input type="text" name="country" value="" placeholder="">
+        <br>
+        Ціна:
+        <input type="text" name="price" value="" placeholder="">
+        <br>
 
         <input type="submit" value="Submit">
     </form>
