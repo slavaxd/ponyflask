@@ -58,22 +58,24 @@
         Назва:
         <input type="text" name="name" value="" placeholder="">
         <br>
-        П.І.Б. капітана:
-        <select name="participants" form="part">
-            {% for participants in participants %}
-            <option value="{{ participants.id }}">{{ participant.name }}</option>
+        Дата створення організації:
+        <input type="text" name="birthday" value="" placeholder="">
+        <br>
+        Назва топ-змагання:
+        <select name="competitions" form="part">
+            {% for competitions in competitions %}
+            <option value="{{ competitions.id }}">{{ competitions.name }}</option>
             {% endfor %}
         </select>
-        П.І.Б. тренера:
-        <input type="text" name="coach" value="" placeholder="">
+
         <input type="submit" value="Submit">
     </form>
     <footer>
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати дані</button>
+        <a href="delete">
+            <button>Видалити дані</button>
         </a>
     </footer>
 

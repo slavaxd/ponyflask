@@ -43,6 +43,13 @@
             position: relative;
             top: 100px
         }
+        footer {
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+            position: fixed;
+            background-color: #4CAF50;
+        }
     </style>
 </head>
 
@@ -50,29 +57,30 @@
     <form action="" method="get" id="part">
         Вид:
         <input type="text" name="kind_of_bike" value="" placeholder="">
-        <br>
-        Виробник:
+        <br> Виробник:
         <input type="text" name="made_by" value="" placeholder="">
-        <br>
-        Матеріал:
+        <br> Матеріал:
         <input type="text" name="material" value="" placeholder="">
-        <br>
-        Вага:
+        <br> Вага:
         <input type="text" name="weight" value="" placeholder="">
-        <br>
-        Колір:
+        <br> Колір:
         <input type="text" name="color" value="" placeholder="">
-        <br>
-        Країна виробника:
+        <br> Країна виробника:
         <input type="text" name="country" value="" placeholder="">
-        <br>
-        Ціна:
+        <br> Ціна:
         <input type="text" name="price" value="" placeholder="">
         <br>
 
         <input type="submit" value="Submit">
     </form>
-
+    <footer>
+        <a href="/">
+            <button class="button">Головна сторінка</button>
+        </a>
+        <a href="add">
+            <button>Додати дані</button>
+        </a>
+    </footer>
 
 
 

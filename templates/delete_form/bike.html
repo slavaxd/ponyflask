@@ -55,28 +55,32 @@
 
 <body>
     <form action="" method="get" id="part">
-        Назва:
-        <input type="text" name="name" value="" placeholder="">
+        Вид:
+        <input type="text" name="kind_of_bike" value="" placeholder="">
+        <br> Виробник:
+        <input type="text" name="made_by" value="" placeholder="">
+        <br> Матеріал:
+        <input type="text" name="material" value="" placeholder="">
+        <br> Вага:
+        <input type="text" name="weight" value="" placeholder="">
+        <br> Колір:
+        <input type="text" name="color" value="" placeholder="">
+        <br> Країна виробника:
+        <input type="text" name="country" value="" placeholder="">
+        <br> Ціна:
+        <input type="text" name="price" value="" placeholder="">
         <br>
-        П.І.Б. капітана:
-        <select name="participants" form="part">
-            {% for participants in participants %}
-            <option value="{{ participants.id }}">{{ participant.name }}</option>
-            {% endfor %}
-        </select>
-        П.І.Б. тренера:
-        <input type="text" name="coach" value="" placeholder="">
+
         <input type="submit" value="Submit">
     </form>
     <footer>
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати дані</button>
+        <a href="delete">
+            <button>Видалити дані</button>
         </a>
     </footer>
-
 
 
 

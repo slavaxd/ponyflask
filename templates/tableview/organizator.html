@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Document</title>
     <style>
         body {
@@ -80,13 +81,18 @@
             <th>Назва</th>
             <th>Дата створення організації</th>
             <th>Кількість змагань</th>
+            <th></th>
         </tr>
         {% for obj in res %}
         <tr>
             <td>{{ obj.name }}</td>
             <td>{{ obj.birthday }}</td>
             <td>{{ obj. }}</td>
-
+            <td>
+                <a href="delete/bike.id">
+                    <button>Видалити</button>
+                </a>
+            </td>
         </tr>
         {% endfor %}
 
@@ -98,9 +104,6 @@
         </a>
         <a href="add">
             <button>Додати</button>
-        </a>
-        <a href="delete">
-            <button>Видалити</button>
         </a>
     </footer>
 </body>
