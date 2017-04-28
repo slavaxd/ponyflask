@@ -54,7 +54,7 @@
 </head>
 
 <body>
-    <form action="" method="get" id="part">
+    <form action="" method="post" id="part">
         П.І.Б.:
         <input type="text" name="name" value="" placeholder="">
         <br>
@@ -80,7 +80,6 @@
             <option value="{{ bike.id }}">{{ bike.kind_of_bike }}</option>
             {% endfor %}
         </select>
-
 
         <input type="submit" value="Submit">
     </form>

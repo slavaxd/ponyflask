@@ -1,5 +1,7 @@
 # coding: utf-8
-from flask import Flask, request, render_template
+from datetime import date
+
+from flask import Flask, request, render_template, redirect, url_for
 from pony.orm import *
 
 from models import *
@@ -87,23 +89,55 @@ def show_table(table_name):
     res = table.select(lambda huy: True)
     return render_template('tableview/' + d[table_name][1] , res=res)
 
-
-
-@db_session
 @app.route('/edit/participant/add/', methods=['GET', 'POST'])
+@db_session
 def add_participant():
-    if request.method == 'POST':
-        p1 = Participant(name=request.form['name'], age=request.form['age'], birthday=request.form['username'], birthplace=request.form['username'], team=Team[int(request.form['username'])], bike=Bike[int(request.form['bike'])])
-
+    if request.args.get('name', ''): #request.method == 'POST':
+        birthday = request.args.get('birthday').strip('-')
+        birthday = map(lambda x: int(x), birthday)
+        p1 = Participant(name=request.args.get('name'), age=request.args.get('age'), birthday=date(*birthday), birthplace=request.args.get('username'), team=Team[int(request.args.get('username'))], bike=Bike[int(request.args.get('bike'))])
+        select(t for t in Participant)[:].show()
+        return redirect('/')
     else:
         teams = Team.select(lambda c: True)
         bikes = Bike.select(lambda c: True)
-        render_template('add_form/participant.html', bikes=bikes, teams=teams)
+#        for bike in bikes:
+#            bike.name
+#            team.id
+#        for team in teams:
+#            team.name
+#            team.id
+        return render_template('add_form/participant.html', bikes=bikes, teams=teams)
+
+@app.route('/edit/<table_name>/delete/<record_id>/', methods=['GET', 'POST'])
+@db_session
+def delete_record(table_name, record_id):
+    d = {
+        'participant': Participant,
+        'team': Team,
+        'bike': Bike,
+        'coach': Coach,
+        'competition': Competition,
+        'organizator': Organizator,
+    }
+    table = d[table_name]
+    res = table.select(lambda t: t.id == int(record_id))
+    
+    if request.args.get('del') == '1':
+        with db_session:
+            res.delete()
+            flush()            
+        return redirect(url_for('index')) #render_template('tableview/' + d[table_name] , res=res)
+    else:
+        return render_template('delete_form/' + table_name + '.html', res=res)
 
 
-@app.route('/edit/<table_name>/delete')
-def delete_from_table():
-    return render_template('delete_from_table.html')
+
+
+#
+#@app.route('/edit/<table_name>/delete')
+#def delete_from_table():
+#    return render_template('delete_from_table.html')
 #url_for('static', filename='style.css')
 
 #app.config.update(

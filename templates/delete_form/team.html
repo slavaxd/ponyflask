@@ -85,23 +85,24 @@
         {% for obj in res %}
         <tr>
             <td>{{ obj.name }}</td>
-            <td>{{ obj. }}</td>
-            <td>{{ obj. }}</td>
+            <td>
+                {% for p in obj.participants %}
+                    {{ p.name }} 
+                {% endfor %}
+            </td>
+            <td>{{ obj.coach.name }}</td>
         </tr>
         {% endfor %}
 
 
     </table>
-    <footer>
-        <a href="/">
-            <button class="button">Головна сторінка</button>
-        </a>
-        <a href="add">
-            <button>Додати</button>
-        </a>
-        <a href="delete/{{team.id}}">
+
+        <a href="?del=1">
             <button>Видалити</button>
         </a>
+    <footer>
+
+       
     </footer>
 </body>
 

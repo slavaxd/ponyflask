@@ -9,7 +9,7 @@ class Team(db.Entity):
     id = PrimaryKey(int, auto=True)
     name = Required(str)
     participants = Set('Participant')
-    coach = Optional('Coach')
+    coach = Optional('Coach', cascade_delete=True)
 
 class Participant(db.Entity):
     id = PrimaryKey(int, auto=True)
