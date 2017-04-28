@@ -21,33 +21,50 @@ def query(id, p1, p2):
                     for c in p.competitions if c.name == p2)[:]
         for r in res:
             r.team.name
-        return render_template('queryres/1.html', res=res)
+#        return res
+    
     if id == 2:
-        res = select(t for t in Team if t.name.startswith(p1)
-                    for t in Team if count(t.participants) == int(p2))[:]
-        return render_template('queryres/2.html', res=res)
+        res = select(t for t in Team if t.name.startswith(p1) and count(t.participants) == int(p2))
+#                    for team in Team if )[:]
+#        return res
+    
     if id == 3:
-        return select(p for p in Participant if p.age > 0)
+        res = select(c for c in Competition if c.name == p1 and count(c.participants) <= int(p2))[:]
+#        return res
+    
     if id == 4:
-        return select(p for p in Participant if p.age > 0)
+        res = select(o for o in Organizator if o.name == p1
+                    for c in o.competitions if c.country == p2)[:]
+#        return res
+    
     if id == 5:
-        return select(p for p in Participant if p.age > 0)
+        res =  select(b for b in Bike if b.kind_of_bike == p1 and b.weight > int(p2))
+#        return res
+    
     if id == 6:
-        return select(p for p in Participant if p.age > 0)
+        res = select(c for c in Coach if c.team.name == p1 and c.age >= int(p2))
+#        return res
+    
     if id == 7:
-        return select(p for p in Participant if p.age > 0)
+        res = select(t for t in Team if t.coach.name == p1 and count(t.participants) >= int(p2))
+#        return res
+    
     if id == 8:
-        return select(p for p in Participant if p.age > 0)
-
+        res =  select(b for b in Bike if b.price == int(p1) and b.material == p2)
+#        return res
+    return render_template('queryres/' + str(id)     + '.html', res=res)
+    
 # /queries/5?p1=huy&p2=lok
-@app.route('/queries/1')
-def single_query():
+@db_session
+@app.route('/queries/<query_id>')
+def single_query(query_id):
     if request.args.get('p1', '') and request.args.get('p2', ''):
         p1 = request.args.get('p1', '')
         p2 = request.args.get('p2', '')
-        return query(1, p1, p2)
+#        res = query(int(query_id), p1, p2)
+        return query(int(query_id), p1, p2) #render_template('queryres/' + query_id + '.html', res=res)
     else:
-        return render_template('queryform/1.html')
+        return render_template('queryform/' + str(query_id) + '.html')
 
 
 
