@@ -9,7 +9,6 @@
         body {
             height: 500px;
             margin: 0;
-
             background-repeat: no-repeat;
         }
 
@@ -41,12 +40,12 @@
             color: white;
             cursor: pointer;
         }
-
         /* table*/
+
         table {
             border-collapse: collapse;
             width: 100%;
-            margin-bottom:50px;
+            margin-bottom: 50px;
         }
 
         th,
@@ -64,10 +63,11 @@
             color: white;
         }
         /* table*/
-        footer{
-            width:100%;
-            bottom:0;
-            height:50px;
+
+        footer {
+            width: 100%;
+            bottom: 0;
+            height: 50px;
             position: fixed;
             background-color: #4CAF50;
         }
@@ -92,7 +92,11 @@
             <td>{{ obj.birthday }}</td>
             <td>{{ obj.birthplace }}</td>
             <td>{{ obj.team.name }}</td>
-
+            <td>
+                <a href="delete/{{coach.id}}">
+                    <button>Видалити</button>
+                </a>
+            </td>
         </tr>
         {% endfor %}
 
@@ -105,9 +109,13 @@
         <a href="add">
             <button>Додати</button>
         </a>
+<<<<<<< HEAD
         <a href="delete/{{obj.id}}">
             <button>Видалити</button>
         </a>
+=======
+
+>>>>>>> 9c8a17ccf486f44386d8066fcfa28553e6599daa
     </footer>
 </body>
 

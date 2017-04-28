@@ -83,22 +83,15 @@
             <th>Дата народження</th>
             <th>Місце народження</th>
             <th>Команда</th>
-            <th></th>
         </tr>
-        {% for obj in res %}
         <tr>
-            <td>{{ obj.name }}</td>
-            <td>{{ obj.age }}</td>
-            <td>{{ obj.birthday }}</td>
-            <td>{{ obj.birthplace }}</td>
-            <td>{{ obj.team.name }}</td>
-            <td>
-                <a href="delete/bike.id">
-                    <button>Видалити</button>
-                </a>
-            </td>
+            <td>{{ coach.name }}</td>
+            <td>{{ coach.age }}</td>
+            <td>{{ coach.birthday }}</td>
+            <td>{{ coach.birthplace }}</td>
+            <td>{{ coach.team.name }}</td>
         </tr>
-        {% endfor %}
+
 
 
     </table>
@@ -106,8 +99,8 @@
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати</button>
+        <a href="delete">
+            <button>Підтвердити видалення</button>
         </a>
     </footer>
 </body>
