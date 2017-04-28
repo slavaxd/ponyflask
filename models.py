@@ -37,7 +37,7 @@ class Coach(db.Entity):
     id = PrimaryKey(int, auto=True)
     name = Required(str)
     age = Required(int)
-#    birthday = Required(date)
+    birthday = Required(date)
     birthplace = Required(str)
     team = Required('Team')
 
