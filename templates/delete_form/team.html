@@ -82,13 +82,13 @@
             <th>Учасники</th>
             <th>Тренер</th>
         </tr>
-        {% for obj in res %}
+
         <tr>
             <td>{{ obj.name }}</td>
             <td>{{ obj. }}</td>
             <td>{{ obj. }}</td>
         </tr>
-        {% endfor %}
+
 
 
     </table>
@@ -96,11 +96,8 @@
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати</button>
-        </a>
-        <a href="delete/{{team.id}}">
-            <button>Видалити</button>
+        <a href="delete">
+            <button>Підтвердити видалення</button>
         </a>
     </footer>
 </body>

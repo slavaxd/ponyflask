@@ -84,7 +84,6 @@
             <th>Організатор</th>
             <th>Кількість учасників</th>
         </tr>
-        {% for obj in res %}
         <tr>
             <td>{{ obj.name }}</td>
             <td>{{ obj.country }}</td>
@@ -92,7 +91,7 @@
             <td>{{ obj.organizator.name }}</td>
             <td>{{ obj.participants.count() }}</td>
         </tr>
-        {% endfor %}
+
 
 
     </table>
@@ -100,11 +99,8 @@
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати</button>
-        </a>
-        <a href="delete/{{competition.id}}">
-            <button>Видалити</button>
+        <a href="delete">
+            <button>Підтвердити видалення</button>
         </a>
     </footer>
 </body>

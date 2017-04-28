@@ -85,7 +85,7 @@
             <th>Назва команди</th>
             <th>Тип велосипеду</th>
         </tr>
-        {% for obj in res %}
+
         <tr>
             <td>{{ obj.name }}</td>
             <td>{{ obj.age }}</td>
@@ -94,7 +94,7 @@
             <td>{{ obj.team.name }}</td>
             <td>{{ obj.bike.kind_of_bike }}</td>
         </tr>
-        {% endfor %}
+
 
 
     </table>
@@ -102,11 +102,8 @@
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати</button>
-        </a>
-        <a href="delete/{{participant.id}}">
-            <button>Видалити</button>
+        <a href="delete">
+            <button>Підтвердити видалення</button>
         </a>
     </footer>
 </body>
