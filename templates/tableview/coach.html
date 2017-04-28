@@ -83,7 +83,7 @@
             <th>Дата народження</th>
             <th>Місце народження</th>
             <th>Команда</th>
-            <th></th>
+
         </tr>
         {% for obj in res %}
         <tr>
@@ -92,11 +92,7 @@
             <td>{{ obj.birthday }}</td>
             <td>{{ obj.birthplace }}</td>
             <td>{{ obj.team.name }}</td>
-            <td>
-                <a href="delete/bike.id">
-                    <button>Видалити</button>
-                </a>
-            </td>
+
         </tr>
         {% endfor %}
 
@@ -108,6 +104,9 @@
         </a>
         <a href="add">
             <button>Додати</button>
+        </a>
+        <a href="delete/{{coach.id}}">
+            <button>Видалити</button>
         </a>
     </footer>
 </body>

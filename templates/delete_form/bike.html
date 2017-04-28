@@ -3,27 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Document</title>
     <style>
         body {
             height: 500px;
             margin: 0;
-            font-size: 18px
+            background-repeat: no-repeat;
         }
 
         a {
-            text-decoration: none;
-            color: black
+            text-decoration: none
         }
 
-        #top {
+        .flex-container {
+            display: flex;
+            align-content: flex-start;
             width: 100%;
             height: 40%;
-            background-image: url(../static/img/zaputu.jpg);
-            background-position: 50% right;
+            background-image: url(/static/img/back.jpg);
+            background-position: 50% 25%;
         }
 
-        .button {
+        button {
             background-color: white;
             color: #008CBA;
             border: 2px solid #008CBA;
@@ -33,16 +35,35 @@
             font-weight: bolder;
         }
 
-        .button:hover {
+        button:hover {
             background-color: #008CBA;
             color: white;
             cursor: pointer;
         }
+        /* table*/
 
-        form {
-            position: relative;
-            top: 100px
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 50px;
         }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        /* table*/
+
         footer {
             width: 100%;
             bottom: 0;
@@ -54,36 +75,42 @@
 </head>
 
 <body>
-    <form action="" method="get" id="part">
-        Вид:
-        <input type="text" name="kind_of_bike" value="" placeholder="">
-        <br> Виробник:
-        <input type="text" name="made_by" value="" placeholder="">
-        <br> Матеріал:
-        <input type="text" name="material" value="" placeholder="">
-        <br> Вага:
-        <input type="text" name="weight" value="" placeholder="">
-        <br> Колір:
-        <input type="text" name="color" value="" placeholder="">
-        <br> Країна виробника:
-        <input type="text" name="country" value="" placeholder="">
-        <br> Ціна:
-        <input type="text" name="price" value="" placeholder="">
-        <br>
+    <div class="flex-container"></div>
+    <table>
+        <tr>
+            <th>Вид</th>
+            <th>Виробник</th>
+            <th>Вага</th>
+            <th>Матеріал</th>
+            <th>Колір</th>
+            <th>Країна виробника</th>
+            <th>Ціна</th>
 
-        <input type="submit" value="Submit">
-    </form>
+
+        </tr>
+
+        <tr>
+            <td>{{ bike.kind_of_bike}}</td>
+            <td>{{ bike.made_by }}</td>
+            <td>{{ bike.weight }}</td>
+            <td>{{ bike.material }}</td>
+            <td>{{ bike.color }}</td>
+            <td>{{ bike.country }}</td>
+            <td>{{ bike.price }}</td>
+        </tr>
+
+
+
+    </table>
+
     <footer>
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="delete">
-            <button>Видалити дані</button>
+        <a href="delete/{{bike.id}}">
+            <button>Підтвердити видалення</button>
         </a>
     </footer>
-
-
-
 
 </body>
 

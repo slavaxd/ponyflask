@@ -3,27 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Document</title>
     <style>
         body {
             height: 500px;
             margin: 0;
-            font-size: 18px
+
+            background-repeat: no-repeat;
         }
 
         a {
-            text-decoration: none;
-            color: black
+            text-decoration: none
         }
 
-        #top {
+        .flex-container {
+            display: flex;
+            align-content: flex-start;
             width: 100%;
             height: 40%;
-            background-image: url(../static/img/zaputu.jpg);
-            background-position: 50% right;
+            background-image: url(/static/img/back.jpg);
+            background-position: 50% 25%;
         }
 
-        .button {
+        button {
             background-color: white;
             color: #008CBA;
             border: 2px solid #008CBA;
@@ -33,20 +36,38 @@
             font-weight: bolder;
         }
 
-        .button:hover {
+        button:hover {
             background-color: #008CBA;
             color: white;
             cursor: pointer;
         }
 
-        form {
-            position: relative;
-            top: 100px
-        }
-        footer {
+        /* table*/
+        table {
+            border-collapse: collapse;
             width: 100%;
-            bottom: 0;
-            height: 50px;
+            margin-bottom:50px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        /* table*/
+        footer{
+            width:100%;
+            bottom:0;
+            height:50px;
             position: fixed;
             background-color: #4CAF50;
         }
@@ -54,49 +75,40 @@
 </head>
 
 <body>
-    <form action="" method="get" id="part">
-        П.І.Б.:
-        <input type="text" name="name" value="" placeholder="">
-        <br>
-        Вік:
-        <input type="text" name="age" value="" placeholder="">
-        <br>
-        Дата народження:
-        <input type="text" name="birthday" value="" placeholder="">
-        <br>
-        Місце народження:
-        <input type="text" name="birthplace" value="" placeholder="">
-        <br>
-        Команда:
-        <select name="team" form="part">
-            {% for team in teams %}
-            <option value="{{ team.id }}">{{ team.name }}</option>
-            {% endfor %}
-        </select>
-        <br>
-        Тип велосипеду:
-        <select name="bike" form="part">
-            {% for bike in bikes %}
-            <option value="{{ bike.id }}">{{ bike.kind_of_bike }}</option>
-            {% endfor %}
-        </select>
+    <div class="flex-container"></div>
+    <table>
+        <tr>
+            <th>П.І.Б.</th>
+            <th>Вік</th>
+            <th>Дата народження</th>
+            <th>Місце народження</th>
+            <th>Назва команди</th>
+            <th>Тип велосипеду</th>
+        </tr>
+        {% for obj in res %}
+        <tr>
+            <td>{{ obj.name }}</td>
+            <td>{{ obj.age }}</td>
+            <td>{{ obj.birthday }}</td>
+            <td>{{ obj.birthplace }}</td>
+            <td>{{ obj.team.name }}</td>
+            <td>{{ obj.bike.kind_of_bike }}</td>
+        </tr>
+        {% endfor %}
 
 
-        <input type="submit" value="Submit">
-    </form>
+    </table>
     <footer>
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="delete">
-            <button>Видалити дані</button>
+        <a href="add">
+            <button>Додати</button>
+        </a>
+        <a href="delete/{{participant.id}}">
+            <button>Видалити</button>
         </a>
     </footer>
-
-
-
-
-
 </body>
 
 </html>
