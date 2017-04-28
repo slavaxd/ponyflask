@@ -58,22 +58,35 @@
         Назва:
         <input type="text" name="name" value="" placeholder="">
         <br>
-        П.І.Б. капітана:
-        <select name="participants" form="part">
-            {% for participants in participants %}
-            <option value="{{ participants.id }}">{{ participant.name }}</option>
+        Країна проведення:
+        <input type="text" name="country" value="" placeholder="">
+        <br>
+        Місто проведення:
+        <input type="text" name="city" value="" placeholder="">
+        <br>
+        Організатор:
+        <select name="team" form="part">
+            {% for organizator in organizators %}
+            <option value="{{ organizator.id }}">{{ organizator.name }}</option>
             {% endfor %}
         </select>
-        П.І.Б. тренера:
-        <input type="text" name="coach" value="" placeholder="">
+        <br>
+        П.І.Б. хедлайнера:
+        <select name="participant" form="part">
+            {% for participant in participants %}
+            <option value="{{ participant.id }}">{{ participant.name }}</option>
+            {% endfor %}
+        </select>
+
+
         <input type="submit" value="Submit">
     </form>
     <footer>
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати дані</button>
+        <a href="delete">
+            <button>Видалити дані</button>
         </a>
     </footer>
 

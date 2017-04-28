@@ -55,25 +55,35 @@
 
 <body>
     <form action="" method="get" id="part">
-        Назва:
+        П.І.Б.:
         <input type="text" name="name" value="" placeholder="">
         <br>
-        П.І.Б. капітана:
-        <select name="participants" form="part">
-            {% for participants in participants %}
-            <option value="{{ participants.id }}">{{ participant.name }}</option>
+        Вік:
+        <input type="text" name="age" value="" placeholder="">
+        <br>
+        Дата народження:
+        <input type="text" name="birthday" value="" placeholder="">
+        <br>
+        Місце народження:
+        <input type="text" name="birthplace" value="" placeholder="">
+        <br>
+        Назва команди:
+        <select name="team" form="part">
+            {% for team in teams %}
+            <option value="{{ team.id }}">{{ team.name }}</option>
             {% endfor %}
         </select>
-        П.І.Б. тренера:
-        <input type="text" name="coach" value="" placeholder="">
+        <br>
+
+
         <input type="submit" value="Submit">
     </form>
     <footer>
         <a href="/">
             <button class="button">Головна сторінка</button>
         </a>
-        <a href="add">
-            <button>Додати дані</button>
+        <a href="delete">
+            <button>Видалити дані</button>
         </a>
     </footer>
 

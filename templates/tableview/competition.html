@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Document</title>
     <style>
         body {
@@ -21,7 +22,7 @@
             align-content: flex-start;
             width: 100%;
             height: 40%;
-            background-image: url(../static/img/back.jpg);
+            background-image: url(/static/img/back.jpg);
             background-position: 50% 25%;
         }
 
@@ -82,6 +83,7 @@
             <th>Місто проведення</th>
             <th>Організатор</th>
             <th>Кількість учасників</th>
+            <th></th>
         </tr>
         {% for obj in res %}
         <tr>
@@ -90,7 +92,11 @@
             <td>{{ obj.city }}</td>
             <td>{{ obj.organizator.name }}</td>
             <td>{{ obj.participants.count() }}</td>
-
+            <td>
+                <a href="delete/bike.id">
+                    <button>Видалити</button>
+                </a>
+            </td>
         </tr>
         {% endfor %}
 
@@ -102,9 +108,6 @@
         </a>
         <a href="add">
             <button>Додати</button>
-        </a>
-        <a href="delete">
-            <button>Видалити</button>
         </a>
     </footer>
 </body>
